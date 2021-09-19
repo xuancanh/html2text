@@ -1,4 +1,4 @@
-module github.com/k3a/html2text
+module github.com/xuancanh/html2text
 
 go 1.16
 
