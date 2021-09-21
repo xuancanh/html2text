@@ -196,7 +196,7 @@ func HTML2Text(html string) string {
 				outBuf.WriteString(lbr)
 			} else if tagNameLowercase == "p" || tagNameLowercase == "/p" {
 				if canPrintNewline {
-					outBuf.WriteString(lbr + lbr)
+					outBuf.WriteString(lbr)
 				}
 				canPrintNewline = false
 			} else if badTagnamesRE.MatchString(tagNameLowercase) {
