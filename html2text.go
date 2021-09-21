@@ -183,7 +183,10 @@ func HTML2Text(html string) string {
 			tagNameLowercase := strings.ToLower(tag)
 
 			if tagNameLowercase == "li" || tagNameLowercase == "li/" {
-				outBuf.WriteString(lbr)
+				if canPrintNewline {
+					outBuf.WriteString(lbr)
+				}
+				canPrintNewline = false
 			} else if headersRE.MatchString(tagNameLowercase) {
 				if canPrintNewline {
 					outBuf.WriteString(lbr)
